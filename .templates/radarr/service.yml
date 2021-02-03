@@ -1,15 +1,14 @@
   radarr:
-    image: linuxserver/radarr:5.14
+    image: linuxserver/radarr
     container_name: radarr
     environment:
       - PUID=0
       - PGID=0
-      - TZ=Europe/London
-      - UMASK_SET=022 #optional
+      - TZ=Europe/Moscow
+      - UMASK=022 #optional
     volumes:
       - ./volumes/radarr/config:/config
-      - ./media/movies:/movies
-      - ./downloads:/downloads
+      - ./media:/media
     ports:
       - 7878:7878
     restart: unless-stopped

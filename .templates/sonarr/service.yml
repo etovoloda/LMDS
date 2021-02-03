@@ -4,12 +4,11 @@
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
-      - UMASK_SET=022 #optional
+      - TZ=Europe/Moscow
+      - UMASK=022 #optional
     volumes:
       - ./volumes/sonarr/data:/config
-      - ./media/tvshows:/tv
-      - ./downloads:/downloads
+      - ./media:/media
     ports:
       - 8989:8989
     restart: unless-stopped

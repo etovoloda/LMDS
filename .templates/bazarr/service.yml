@@ -4,12 +4,11 @@
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=Europe/Moscow
       - UMASK_SET=022 #optional
     volumes:
       - ./volumes/bazarr/config:/config
-      - ./media/movies:/movies
-      - ./media/tvshows:/tv
+      - ./media:/media
     ports:
       - 6767:6767
     restart: unless-stopped
